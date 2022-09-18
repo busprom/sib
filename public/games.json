@@ -1,0 +1,33 @@
+{
+  "lots": [
+    {
+      "id": "EuEZqmaYLjyb7QnFLMGMtQFtbMN7NpijeCJ18ZAKv7is",
+      "min": "0.01",
+      "max": "5",
+      "price": "0.1",
+      "img": "https://treasure.kotarosharks.io/treasures.png"
+    },
+    {
+      "id": "ETpFxmnFo57Y4aNYxz2qsCnACHVDFFPcTi7GxcY8Gmbr",
+      "min": "0.1",
+      "max": "0.4",
+      "price": "0.2",
+      "img": "https://cryptomore.me/img/sibbox2.png"
+    },
+    {
+      "id": "oE4rrzT3tgenPLBBhoiPgmdUFcnAiVBGGt6K7oaX9Yo",
+      "min": "0.05",
+      "max": "0.07",
+      "price": "0.06",
+      "img": "https://sdgames.ru/img/box2.webp"
+    },
+    {
+      "id": "DEFb9Q6jDDkZCSSQ85TYB5bVspHqVe5ZYGtNvnUGXRxG",
+      "min": "0.05",
+      "max": "0.09",
+      "price": "0.06",
+      "img": "https://cryptomore.me/img/sibbox4.png"
+    }
+  ],
+  "point": "https://lingering-broken-sea.solana-mainnet.discover.quiknode.pro/d4b0c63f5ec26f1b26031e44feecf2e3d344057a/"
+}

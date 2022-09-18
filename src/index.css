@@ -1,0 +1,38 @@
+@font-face {
+	font-family: '000webfont';
+	src: url('../fonts/000webfont.ttf');
+}
+
+@font-face {
+	font-family: 'GothamMedium';
+	src: url('../fonts/GothamMedium.ttf');
+}
+
+body {
+  margin: 0;
+  font-family: 'GothamMedium', sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+	background: none;
+}
+
+
+::-webkit-scrollbar-thumb {
+	background-color: #f368c6;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 50%;
+	border-radius: 5px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  opacity: 0.5;
+}
