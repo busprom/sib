@@ -175,7 +175,7 @@
 }
 
 .table-wrap {
-  padding: 0 200px;
+  padding: 0 100px;
   margin: 0 20px;
   display: flex;
   justify-content: center;
@@ -186,19 +186,21 @@
 .table-stat {
   display: flex;
   justify-content: space-around;
-  padding: 0 200px;
+  padding: 0 100px;
 }
 .table-stat h3 {
   cursor: pointer;
   color: #1A0256;
-  width: 50%;
-  text-align: center;
+  width: 30%;
   padding: 7px 0;
-  margin: 20px;
   border-radius: 15px;
   border: 1px solid #64408e;
   font-weight: 600;
   text-shadow: 0px 3px 4px #1A0256;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 .table-stat h3:hover {
   box-shadow: inset 1px 1px 10px #64408e;
@@ -408,6 +410,10 @@
   }
 }
 @media (max-width: 560px) {
+  .table-stat h3 {
+    font-size: 16px;
+    padding: 5px;
+  }
   .table-wrap {
     display: block;
     width: 100%;
