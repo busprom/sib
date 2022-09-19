@@ -29,8 +29,8 @@ export const Table = ({ lots, img, tx }) => {
   return (
     <>
       <div className="table-stat">
-        <h3 style={{textDecoration: stat ? 'none' : 'underline'}} onClick={setStat.bind(null, false)}>Game Statistics</h3>
-        {tx[0] && <h3 style={{textDecoration: !stat ? 'none' : 'underline'}} onClick={setStat.bind(null, true)}>Transaction statistics</h3>}
+        <h3 style={{boxShadow: stat ? 'none' : 'inset 1px 1px 10px #000',background: stat ? 'none' : '#64408e',color: stat ? '#64408e' : '#fff'}} onClick={setStat.bind(null, false)}>Game Statistics</h3>
+        {tx[0] && <h3 style={{boxShadow: !stat ? 'none' : 'inset 1px 1px 10px #000',background: !stat ? 'none' : '#64408e',color: !stat ? '#64408e' : '#fff'}} onClick={setStat.bind(null, true)}>Transaction statistics</h3>}
       </div>
       
       <div className="table-wrap">

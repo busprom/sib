@@ -21,13 +21,14 @@
 
 .login-button {
   width: 165px;
-  padding: 5px;
-  background-image: url(../public/img/button1.png);
+  padding: 8px;
+  background-image: url(../public/img/buttontest1.png);
   background-size: 100% 100%;
   color: #ffffff;
   display: flex;
   justify-content: center;
   cursor: pointer;
+  border-radius: 15px;
   text-shadow: 0px 3px 0px rgba(59, 16, 179, 0.6);
   font-size: 20px;
   font-weight: 600;
@@ -60,6 +61,7 @@
 }
 
 .games-wrap {
+  text-transform: uppercase;
   font-size: 18px;
   display: flex;
   flex-direction: column;
@@ -153,22 +155,28 @@
 
 .buy-button {
   color: #ffffff;
-  background-image: url(../public/img/button1.png);
+  background-image: url(../public/img/buttontest1.png);
   background-size: 100% 100%;
-  padding: 7px 20px;
+  padding: 8px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   font-size: 20px;
   z-index: 1;
+  text-shadow: 0px 3px 0px rgb(59 16 179 / 60%);
+  font-weight: 600;
   border-radius: 22px;
+  margin-top: 5px;
+  box-shadow: 1px 5px 20px rgb(23, 0, 61);
 }
 .buy-button:hover {
   box-shadow: inset 1px 5px 20px rgb(23, 0, 61);
 }
 
 .table-wrap {
+  padding: 0 200px;
+  margin: 0 20px;
   display: flex;
   justify-content: center;
   padding-bottom: 80px;
@@ -178,21 +186,34 @@
 .table-stat {
   display: flex;
   justify-content: space-around;
-  color: #5641D9;
+  padding: 0 200px;
 }
 .table-stat h3 {
   cursor: pointer;
+  color: #1A0256;
+  width: 50%;
+  text-align: center;
+  padding: 7px 0;
+  margin: 20px;
+  border-radius: 15px;
+  border: 1px solid #64408e;
+  font-weight: 600;
+  text-shadow: 0px 3px 4px #1A0256;
+}
+.table-stat h3:hover {
+  box-shadow: inset 1px 1px 10px #64408e;
 }
 
 .table {
   border-collapse: collapse;
   white-space: nowrap;
+  width: 100%;
 }
 
 .table th {
-  padding: 20px 80px;
+  padding: 20px 70px;
   background-color: #1A0256;
-  color: #5641D9;
+  color: #9584FD;
 }
 
 .table td {
@@ -204,11 +225,11 @@
   background-color: #1A0256;
 }
 .table tr:nth-child(odd) {
-  background-color: #1F0463;
+  background-color: #4c3781;
 }
 
 .table a {
-  color: #5641D9;
+  color: #d7d1ff;
 }
 
 .quity {
@@ -217,7 +238,7 @@
 }
 
 .footer {
-  background-color: #2C078B;
+  background-color: #4c3981;
   color: #ffffff;
   font-size: 13px;
   display: flex;
@@ -312,19 +333,23 @@
 .sollink {
   width: 100%;
   text-align: center;
-  padding: 10px 0;
-  background-color: #2d0a81;
+  padding: 15px 0;
+  background-color: #64408e;
 }
 .solscan {
   margin-bottom: 20px;
+  text-transform: uppercase;
   text-decoration: none;
-  color: #8573f0;
+  color: #bd9fff;
   transition: 0.2s;
-  font-size: 32px;
+  font-size: 18px;
+  padding: 5px 20px;
+  border-radius: 15px;
+  border: 1px solid #bd9fff;
+  transition: .2s;
 }
 .solscan:hover {
-  text-decoration: inherit;
-  opacity: .8;
+  box-shadow: inset 0px 0px 5px #bd9fff;
 }
 
 .no-box {
