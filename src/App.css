@@ -29,16 +29,10 @@
   justify-content: center;
   cursor: pointer;
   text-shadow: 0px 3px 0px rgba(59, 16, 179, 0.6);
-  font-size: 35px;
-  font-family: '000webfont';
+  font-size: 20px;
+  font-weight: 600;
   transition: .1s;
   opacity: .8;
-}
-.login-button:active {
-  height: 58px;
-}
-.login-button:hover {
-  opacity: 1;
 }
 
 .menu {
@@ -65,24 +59,8 @@
   /* background-repeat: no-repeat; */
 }
 
-.games {
-  padding: 25px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.games img {
-  width: 31vw;
-  opacity: .8;
-  transition: .2s;
-}
-.games img:hover {
-  opacity: 1;
-}
-
 .games-wrap {
-  font-size: 32px;
-  font-family: '000webfont';
+  font-size: 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -182,13 +160,9 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  font-size: 35px;
-  font-family: '000webfont';
+  font-size: 20px;
   z-index: 1;
   border-radius: 22px;
-}
-.buy-button:active {
-  height: 58px;
 }
 .buy-button:hover {
   box-shadow: inset 1px 5px 20px rgb(23, 0, 61);
@@ -250,12 +224,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px 0;
+  padding: 20px 0;
 }
 
 .footer a, .footer span {
   opacity: .8;
-  padding-bottom: 10px;
   transition: 0.2s;
 }
 
@@ -308,11 +281,12 @@
   height: 50px;
   display: flex;
   justify-content: center;
+  align-items: center;
   color: #ffffff;
   text-shadow: 0px 2px 0px rgba(59, 16, 179, 0.6);
   cursor: pointer;
-  font-size: 45px;
-  font-family: '000webfont';
+  font-size: 20px;
+  font-weight: 600;
   opacity: .8;
 }
 .box-open:active {
@@ -332,7 +306,6 @@
   cursor: pointer;
   text-shadow: 0px 3px 0px rgba(59, 16, 179, 0.6);
   font-size: 32px;
-  font-family: '000webfont';
   position: absolute;
 }
 
@@ -347,7 +320,6 @@
   text-decoration: none;
   color: #8573f0;
   transition: 0.2s;
-  font-family: '000webfont';
   font-size: 32px;
 }
 .solscan:hover {
@@ -358,7 +330,6 @@
 .no-box {
   color: #8573F0;
   font-size: 46px;
-  font-family: '000webfont';
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -395,9 +366,6 @@
 }
 
 @media (max-width: 700px) {
-  .games {
-    padding: 10px;
-  }
   .main-box img {
     width: 95%;
   }
@@ -418,20 +386,6 @@
   }
 }
 
-
-
-
-@import url("//fonts.googleapis.com/css?family=Pacifico&text=Pure");
-@import url("//fonts.googleapis.com/css?family=Roboto:700&text=css");
-@import url("//fonts.googleapis.com/css?family=Kaushan+Script&text=!");
-
-body {
-  min-height: 450px;
-  height: 100vh;
-  margin: 0;
-  background: radial-gradient(circle, #0077ea, #1f4f96, #1b2949, #000);
-}
-
 .stage {
   height: 210px;
   margin: auto;
@@ -445,22 +399,22 @@ body {
 }
 
 .layer {
+  width: 100%;
   height: 100%;
   position: absolute;
   transform-style: preserve-3d;
   animation: ಠ_ಠ 2s infinite alternate ease-in-out -3.5s;
-  /* animation-fill-mode: forwards; */
   transform: rotateY(20deg) rotateX(30deg) translateZ(0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .layer:after {
-  font: 45px/0.65 "Roboto", sans-serif;
-  content: "0.1 SOL";
+  font-size: 36px;
+  content: attr(content);
   white-space: pre;
   text-align: center;
-  position: absolute;
-  top: 80px;
-  left: -20px;
   color: whitesmoke;
   letter-spacing: -1px;
   text-shadow: -1px 0 10px rgba(0, 0, 0, 0.43);

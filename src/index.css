@@ -1,16 +1,8 @@
-@font-face {
-	font-family: '000webfont';
-	src: url('../fonts/000webfont.ttf');
-}
-
-@font-face {
-	font-family: 'GothamMedium';
-	src: url('../fonts/GothamMedium.ttf');
-}
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;800&display=swap");
 
 body {
   margin: 0;
-  font-family: 'GothamMedium', sans-serif;
+  font-family: 'Exo 2', sans-serif;
 }
 
 * {
@@ -22,7 +14,6 @@ body {
 	height: 10px;
 	background: none;
 }
-
 
 ::-webkit-scrollbar-thumb {
 	background-color: #f368c6;

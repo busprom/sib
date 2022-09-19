@@ -4,11 +4,6 @@ import { Buy } from './components/buy';
 import { Open } from './components/open';
 import { Table } from './components/table';
 
-const arr = [
-  { name: 'Submarine', href: 'http://submarine.kotarosharks.io/' },
-  { name: 'Coinflip', href: 'https://coinflip.kotarosharks.io' },
-  { name: 'Kotaro Sharks', href: 'https://magiceden.io/creators/kotaro_sharks' }
-];
 
 function App() {
   const [lots, setLots] = useState([]);
@@ -71,19 +66,17 @@ function App() {
               <div className="games-box">
                 <img className="box-img" src={k.img} alt="box" />
                 <div className="total-info" >
-                  <div class="stage">
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
-                    <div class="layer"></div>
+                  <div className="stage">
+                    <div content={k.price+' SOL'} className="layer" />
+                    <div content={k.price+' SOL'} className="layer" />
+                    <div content={k.price+' SOL'} className="layer" />
+                    <div content={k.price+' SOL'} className="layer" />
+                    <div content={k.price+' SOL'} className="layer" />
+                    <div content={k.price+' SOL'} className="layer" />
+                    <div content={k.price+' SOL'} className="layer" />
+                    <div content={k.price+' SOL'} className="layer" />
+                    <div content={k.price+' SOL'} className="layer" />
                   </div>
-                  {k.price} SOL
                 </div>
               </div>
 
@@ -103,19 +96,11 @@ function App() {
 
       <Table lots={lots} img={games[current]} tx={tx} />
 
-      <div className="games">
-        {arr.map((k, i) => (
-          <a key={i} href={k.href} target="_blank" rel="noreferrer">
-            <img src={'/img/game-' + i + '.png'} alt={'game-' + i} />
-          </a>
-        ))}
-      </div>
-
       <div className="footer">
         <a href="https://cryptomore.me/" target="_blank" rel="noreferrer">
           <img src="/img/cmWhite.png" alt="cryptomore" />
         </a>
-        <span>Create your own NFT Mystery Boxes on Solana</span>
+        <span>Created by cryptomore.me</span>
       </div>
 
     </div>
