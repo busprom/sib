@@ -94,7 +94,7 @@ function App() {
         {open ? <Open setOpen={setOpen} lot={games[current]} /> : <Buy lot={games[current]} setTx={setTx} />}
       </div>
 
-      <Table lots={lots} img={games[current]} tx={tx} />
+      <Table lots={lots} img={games[current]} tx={tx} price={games[current]} />
 
       <div className="footer">
         <a href="https://cryptomore.me/" target="_blank" rel="noreferrer">

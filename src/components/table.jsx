@@ -3,15 +3,16 @@ import { useMemo } from "react";
 
 const head = ['Treasures', 'Bonus SOL', 'Probability', 'Found', 'Remains'];
 const statHead = ['Date', 'Win', 'User', 'Transaction'];
+const patHead = ['№', 'User', 'Total boxes', 'Total wins', 'Result'];
 
 const getAddr = key => key.substr(0, 5) + '...' + key.substr(38);
 const getTx = key => key.substr(0, 5) + '...' + key.substr(83);
 
-export const Table = ({ lots, img, tx }) => {
-  if (!img) return null;
+export const Table = ({ lots, img, tx, price }) => {
+  if (!img || !price) return null;
   const tot = useMemo(() => lots.reduce((acc, k) => (acc + parseInt(k.qty) - parseInt(k.wins)), 0), [lots]);
 
-  const [stat, setStat] = useState(false);
+  const [stat, setStat] = useState(0);
 
   const data = useMemo(() => {
     let res = [], qty = 0, opened = 0, remains = 0;
@@ -26,15 +27,26 @@ export const Table = ({ lots, img, tx }) => {
     return { res: sortTbody('bonus', res), opened, remains, qty };
   }, [lots]);
 
+  const us = useMemo(() => {
+    const users = [];
+    for(let i = 0; i < tx.length; i++) {
+      let index = users.findIndex(k => k.user === tx[i].user);
+      if(index === -1) users.push({user: tx[i].user, count: 1, win: tx[i].win});
+      else users[index] = {...users[index], count: users[index].count + 1, win: users[index].win + tx[i].win};
+    }
+    return sortTbody('-win', users);
+  }, [tx]);
+
   return (
     <>
       <div className="table-stat">
-        <h3 style={{boxShadow: stat ? 'none' : 'inset 1px 1px 10px #000',background: stat ? 'none' : '#64408e',color: stat ? '#64408e' : '#fff'}} onClick={setStat.bind(null, false)}>Game Statistics</h3>
-        {tx[0] && <h3 style={{boxShadow: !stat ? 'none' : 'inset 1px 1px 10px #000',background: !stat ? 'none' : '#64408e',color: !stat ? '#64408e' : '#fff'}} onClick={setStat.bind(null, true)}>Transaction statistics</h3>}
+        <h3 style={{boxShadow: stat === 0 ? 'none' : 'inset 1px 1px 10px #000',background: stat === 0 ? 'none' : '#64408e', color: stat === 0 ? '#64408e' : '#fff'}} onClick={setStat.bind(null, 0)}>Game Statistics</h3>
+        <h3 style={{boxShadow: stat === 1 ? 'none' : 'inset 1px 1px 10px #000',background: stat === 1 ? 'none' : '#64408e', color: stat === 1 ? '#64408e' : '#fff'}} onClick={setStat.bind(null, 1)}>Transaction statistics</h3>
+        <h3 style={{boxShadow: stat === 2 ? 'none' : 'inset 1px 1px 10px #000',background: stat === 2 ? 'none' : '#64408e', color: stat === 2 ? '#64408e' : '#fff'}} onClick={setStat.bind(null, 2)}>Participants</h3>
       </div>
       
       <div className="table-wrap">
-        {!stat ? <table className="table">
+        {stat === 0 ? <table className="table">
           <thead>
             <tr>
               {head.map((k, i) => (
@@ -71,7 +83,7 @@ export const Table = ({ lots, img, tx }) => {
             </tr>
           </tbody>
         </table>
-        : <table className="table">
+        : stat === 1 ? <table className="table">
           <thead>
             <tr>
               {statHead.map((k, i) => (
@@ -87,9 +99,31 @@ export const Table = ({ lots, img, tx }) => {
                 <td><a href={'https://solscan.io/account/'+k.user} target="_blank" rel="noreferrer">
                   {getAddr(k.user)}
                 </a></td>
-                <td><a href={'https://solscan.io/account/'+k.id} target="_blank" rel="noreferrer">
+                <td><a href={'https://solscan.io/tx/'+k.id} target="_blank" rel="noreferrer">
                   {getTx(k.id)}
                 </a></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        : <table className="table">
+          <thead>
+            <tr>
+              {patHead.map((k, i) => (
+                <th key={i}>{k}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {us.map((k, i) => (
+              <tr key={i}>
+                <td>{i+1}</td>
+                <td><a href={'https://solscan.io/account/'+k.user} target="_blank" rel="noreferrer">
+                  {getAddr(k.user)}
+                </a></td>
+                <td>{k.count} <i style={{fontSize: '12px'}}>({(parseFloat(price.price)*k.count).toFixed(2)} SOL)</i></td>
+                <td>{k.win.toFixed(2)} SOL</td>
+                <td>{(k.win-parseFloat(price.price)*k.count).toFixed(2)} SOL</td>
               </tr>
             ))}
           </tbody>
