@@ -66,7 +66,7 @@ export const Buy = ({ lot = {}, setTx }) => {
         <img style={{height: '300px'}} src={lot.img} alt="box" />
         <div style={{color: '#ffffff'}}>Quantity - {load ? '?' : qty.length}</div>
         <div className="buy-button" onClick={buy} style={{ width: 'auto' }}>
-          {'BUY FOR ' + lot.price + 'SOL'}
+          {'BUY FOR ' + lot.price + ' SOL'}
         </div>
       </div>
     </div>

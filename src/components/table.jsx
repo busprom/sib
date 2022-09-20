@@ -14,6 +14,12 @@ export const Table = ({ lots, img, tx, price }) => {
 
   const [stat, setStat] = useState(0);
 
+  const loader = cs => <tr>
+    <td align="center" colSpan={cs}>
+      <img style={{opacity: .6}} src="/img/load.gif" alt="load" />
+    </td>
+  </tr> 
+
   const data = useMemo(() => {
     let res = [], qty = 0, opened = 0, remains = 0;
     for (let i = 0; i < lots.length; i++) {
@@ -55,7 +61,7 @@ export const Table = ({ lots, img, tx, price }) => {
             </tr>
           </thead>
           <tbody>
-            {data.res.map((k, i) => (
+            {!data.res[0] ? loader(5) : data.res.map((k, i) => (
               <tr key={i}>
                 <td className="quity">
                   <img style={{ width: '50px' }} src={img.img} alt="box" />
@@ -92,7 +98,7 @@ export const Table = ({ lots, img, tx, price }) => {
             </tr>
           </thead>
           <tbody>
-            {tx.map((k, i) => (
+            {!tx[0] ? loader(4) : tx.map((k, i) => (
               <tr key={i}>
                 <td>{k.data}</td>
                 <td>{k.win.toFixed(2)} SOL</td>
@@ -115,7 +121,7 @@ export const Table = ({ lots, img, tx, price }) => {
             </tr>
           </thead>
           <tbody>
-            {us.map((k, i) => (
+            {!us[0] ? loader(5) : us.map((k, i) => (
               <tr key={i}>
                 <td>{i+1}</td>
                 <td><a href={'https://solscan.io/account/'+k.user} target="_blank" rel="noreferrer">
